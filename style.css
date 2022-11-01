@@ -1,0 +1,57 @@
+:root {
+	--bg-color: #414141;
+	--highlight: #666666;
+}
+
+body {
+	margin: 0;
+	background-color: red;
+}
+
+.navbar {
+	display: flex;
+	justify-content: end;
+	background-color: var(--bg-color);
+	margin: 0;
+	padding: 0px;
+}
+.nav-btn {
+	position: relative;
+	border-left: 1px solid var(--highlight);
+}
+
+li {
+	list-style-type: none;
+	padding: 20px 30px;
+	background-color: var(--bg-color);
+	color: #eeeeee;
+	transition: background-color 0.5s;
+	cursor: pointer;
+}
+li:hover {
+	background-color: var(--highlight);
+}
+li:hover > ul > li:nth-child(n) {
+	transform: translateY(0);
+}
+nav li > ul {
+	position: absolute;
+	padding: 0;
+	left: 0;
+	top: 100%;
+	width: max-content;
+	z-index: -1;
+}
+
+nav li > ul > li:nth-child(1) {
+	transform: translateY(-100%);
+	transition: transform 1s ease;
+}
+nav li > ul > li:nth-child(2) {
+	transform: translateY(-200%);
+	transition: transform 1s ease 0.5s;
+}
+nav li > ul > li:nth-child(3) {
+	transform: translateY(-300%);
+	transition: transform 1s ease 1s;
+}

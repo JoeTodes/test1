@@ -1,0 +1,45 @@
+:root {
+	--bg-color: #414141;
+	--highlight: #666666;
+}
+
+body {
+	margin: 0;
+}
+
+.navbar {
+	display: flex;
+	justify-content: end;
+	background-color: var(--bg-color);
+	margin: 0;
+	padding: 0px;
+}
+.nav-btn {
+	position: relative;
+	border-left: 1px solid var(--highlight);
+}
+
+li {
+	list-style-type: none;
+	padding: 20px 30px;
+	background-color: var(--bg-color);
+	color: #eeeeee;
+	transition: background-color 0.5s;
+	cursor: pointer;
+}
+li:hover {
+	background-color: var(--highlight);
+}
+li:hover > ul {
+	transform: translateY(0);
+}
+nav li > ul {
+	position: absolute;
+	padding: 0;
+	left: 0;
+	top: 100%;
+	width: max-content;
+	transform: translateY(-100%);
+	z-index: -1;
+	transition: transform 1s ease;
+}
